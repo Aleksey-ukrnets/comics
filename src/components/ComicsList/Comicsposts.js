@@ -82,7 +82,7 @@ export default function ComicsPosts() {
     // console.log(location.pathname === `/1`)
     return(
         <>
-        <div>
+        
                 {posts.map( post => {
                     return(
                         post.id === location.pathname ? 
@@ -118,7 +118,7 @@ export default function ComicsPosts() {
                     null
                     )
                 })}
-        </div>        
+                
            
         </>
     )
