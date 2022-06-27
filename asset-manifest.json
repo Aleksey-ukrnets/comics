@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/comics/static/css/main.7f9dd114.css",
-    "main.js": "/comics/static/js/main.7791333c.js",
+    "main.css": "/comics/static/css/main.13ade708.css",
+    "main.js": "/comics/static/js/main.9c9a334b.js",
     "static/media/comics10.1.jpeg": "/comics/static/media/comics10.1.e84d9f872dbad80272cf.jpeg",
     "static/media/comics6.3.jpeg": "/comics/static/media/comics6.3.ef233190f7d88712bf2e.jpeg",
     "static/media/comics10.2.jpeg": "/comics/static/media/comics10.2.a6494ec696d9a1fd09e3.jpeg",
@@ -42,11 +42,11 @@
     "static/media/arrowRight.svg": "/comics/static/media/arrowRight.db98598de77d0bdb538a6444941960e6.svg",
     "static/media/youtube.svg": "/comics/static/media/youtube.b62db9bd04d819e8768cbf44ddaff8ef.svg",
     "static/media/in.svg": "/comics/static/media/in.53e8f4d06adc5aea062697d087b4cdee.svg",
-    "main.7f9dd114.css.map": "/comics/static/css/main.7f9dd114.css.map",
-    "main.7791333c.js.map": "/comics/static/js/main.7791333c.js.map"
+    "main.13ade708.css.map": "/comics/static/css/main.13ade708.css.map",
+    "main.9c9a334b.js.map": "/comics/static/js/main.9c9a334b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f9dd114.css",
-    "static/js/main.7791333c.js"
+    "static/css/main.13ade708.css",
+    "static/js/main.9c9a334b.js"
   ]
 }
