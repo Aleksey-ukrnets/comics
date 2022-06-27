@@ -1,7 +1,7 @@
 
 .seasons-card {
     width: 100%;
-    margin:  0 0 50px 0;
+    margin:  0 auto 50px 0;
 }
 .card {
     text-decoration: none;
@@ -30,14 +30,17 @@
     &-list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
         @media (max-width: 768px){
             padding-right: 20px;
         }
         @media (max-width: 500px){
-            padding-right: 0px;
+            padding: 0 15px 0 20px;
             flex-direction: column;
+          
+        }
+        @media (max-width: 500px){
+            padding: 0;
           
         }
     }
