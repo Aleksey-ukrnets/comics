@@ -14,10 +14,12 @@
         line-height: 28px;
         margin-left: 20px;
         &:nth-child(2), &:nth-child(3) {
-            margin-left: 20px
+            margin-left: 20px;
+            cursor: default;
+            color: rgb(84, 84, 84);
         }
         &.active {
-            color: gray;
+            color: aqua;
         }
     }
     &-nav {

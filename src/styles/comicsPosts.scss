@@ -2,8 +2,17 @@
     margin: 0;
     padding: 0;
 }
+.comics-padding {
+    padding: 0 25px;
+    @media (max-width: 768px){
+        padding: 0 50px;
+    }
+    @media (max-width: 768px){
+        padding: 0 18px;
+    }
+}
 .comics-posts {
-    width: 70vw;
+    width: 55vw;
     @media (max-width: 768px){
         width: 100vw;
         
@@ -15,10 +24,7 @@
         font-weight: 700;
     }
    &_main {
-    padding: 0 50px;
-    @media (max-width: 768px){
-        padding: 0 18px;
-    }
+
         & p {
             line-height: 32px;
             font-size: 20px;
@@ -32,4 +38,26 @@
             margin-top: 40px;
         }
    }
+   & nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    & a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+    }
+   }
+   
 }
+.comics-svg {
+    width: 40px;
+    height: 40px;
+}
+// .comics-svg * {
+//     color: tomato;
+//     fill: tomato;
+//     stroke: tomato;
+//     width: 25px;
+//     height: 25px;
+// }

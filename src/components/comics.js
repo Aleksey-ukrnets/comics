@@ -23,21 +23,19 @@ import { useState } from 'react'
 export default function Comics() {
 
     const collection = [
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 1' , value: 'значение1' , img: `${commicsFirst}`, to: '1'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 2' , value: 'значение2' , img: `${commicsSecond}`, to: '2'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 3' , value: 'значение3' , img: `${commicsThird}`, to: '3'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 4' , value: 'значение4' , img: `${commicsFour}`, to: '4'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 5' , value: 'значение5' , img: `${commicsFive}`, to: '5'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 6' , value: 'значение6' , img: `${commicsSix}`, to: '6'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 7' , value: 'значение7' , img: `${commicsSeven}`, to: '7'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 8' , value: 'значение8' , img: `${commicsEight}`, to: '8'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 9' , value: 'значение9' , img: `${commicsNine}`, to: '9'},
-        {date: 'June 24',icon: icons, title: 'BattleVerse Chronicles: Special Issue #1' , value: 'значение10' , img: `${commicsTen}`, to: '10'},
+        {date: 'April 17',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 1' , value: 1 , img: `${commicsFirst}`, to: '1'},
+        {date: 'April 17',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 2' , value: 2 , img: `${commicsSecond}`, to: '2'},
+        {date: 'April 17',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 3' , value: 3 , img: `${commicsThird}`, to: '3'},
+        {date: 'April 24',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 4' , value: 4 , img: `${commicsFour}`, to: '4'},
+        {date: 'May 1',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 5' , value: 5 , img: `${commicsFive}`, to: '5'},
+        {date: 'May 8',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 6' , value: 6 , img: `${commicsSix}`, to: '6'},
+        {date: 'May 15',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 7' , value: 7 , img: `${commicsSeven}`, to: '7'},
+        {date: 'May 22',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 8' , value: 8 , img: `${commicsEight}`, to: '8'},
+        {date: 'May 29',icon: icons, title: 'BattleVerse Chronicles: Season I, Issue 9' , value: 9 , img: `${commicsNine}`, to: '9'},
+        {date: 'June 5',icon: icons, title: 'BattleVerse Chronicles: Special Issue #1' , value: 10 , img: `${commicsTen}`, to: '10'},
         
     ]
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    // };
+   
     return(
         <>
         <Seasons />
@@ -45,8 +43,7 @@ export default function Comics() {
                 <div className='card-list'>
                     {collection.map((value, index) => {
                         return(
-                            <>
-                                <NavLink  key={value.title} to={`/${value.to}`} className='card'>
+                                <NavLink  key={value.value} to={`/${value.to}`} className='card'>
                                     <div className="card-main">
                                         <div className='card-right'>
                                             <img src={value.img} alt="#" />
@@ -59,7 +56,6 @@ export default function Comics() {
                                         </div>
                                     </div>
                                 </NavLink>
-                            </>
                         )
                     })}
                 </div>

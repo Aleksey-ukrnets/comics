@@ -43,7 +43,7 @@ export default function Footer(){
         <p style={{marginTop: '10px'}}>Copyright © 2022. All Rights Reserved by BVGAME Limited</p>
         <div className='links'>
           {links.map((item, index) => (
-            <Link key={index} exact to={item.to} 
+            <Link key={index}  to={item.to} 
               onClick={() => setTimeout(() => {window.scrollTo(10,0)}, 200)}>
               {item.value}
             </Link>

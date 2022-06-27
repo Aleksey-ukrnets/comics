@@ -40,57 +40,74 @@ import commicsThirdNine from '../../assets/seasons/comics9.3.jpeg'
 //10
 import commicsFirstTen from '../../assets/seasons/comics10.1.jpeg'
 import commicsSecondTen from '../../assets/seasons/comics10.2.jpeg'
-import { NavLink } from 'react-router-dom'
-import ComingSoon from '../comingsoon'
+//arrows
+import { ReactComponent as ArrowLeft} from '../../assets/seasons/arrowLeft.svg'
+import { ReactComponent as ArrowRight} from '../../assets/seasons/arrowRight.svg'
+import { Link } from 'react-router-dom'
+
 
 import '../../styles/comicsPosts.scss'
 
 export default function ComicsPosts() {
    const location = useLocation()
   
-  
 
     const posts = [
-        {img1: `${commicsFirst}`, img2: `${commicsSecond}`,img3: `${commicsThird}`,title: 'BattleVerse Chronicles: Season I, Issue 1', id: '/1', text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
+        {imgs: [ `${commicsFirst}`, `${commicsSecond}`, `${commicsThird}`],title: 'BattleVerse Chronicles: Season I, Issue 1', id: '/1', text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
 
-        {img1: `${commicsFirstSec}`, img2: `${commicsSecondSec}`,img3: `${commicsThirdSec}`,title: 'BattleVerse Chronicles: Season I, Issue 2', id: '/2', text1: 'Follow the crew of Quazar Fire ship and their adventures! Don’t miss any release. We are preparing something special for you!'},
+        {imgs: [`${commicsFirstSec}`, `${commicsSecondSec}`, `${commicsThirdSec}`],title: 'BattleVerse Chronicles: Season I, Issue 2', id: '/2', text1: 'Follow the crew of Quazar Fire ship and their adventures! Don’t miss any release. We are preparing something special for you!'},
 
-        {img1: `${commicsFirstThrid}`, img2: `${commicsSecondThrid}`,img3: `${commicsThirdThrid}`,title: 'BattleVerse Chronicles: Season I, Issue 3', id: '/3', text1: 'New issue of the Battleverse: Chronicles is out! We promised you something special and we did it!', text2: 'We want the community to help us develop the story. That’s why our next issue will depend on your choice.', text3: 'Check our social media and don’t miss your chance to influence the stories of the BattleVerse.'},
+        {imgs: [`${commicsFirstThrid}`, `${commicsSecondThrid}`, `${commicsThirdThrid}`],title: 'BattleVerse Chronicles: Season I, Issue 3', id: '/3', text1: 'New issue of the Battleverse: Chronicles is out! We promised you something special and we did it!', text2: 'We want the community to help us develop the story. That’s why our next issue will depend on your choice.', text3: 'Check our social media and don’t miss your chance to influence the stories of the BattleVerse.'},
 
-        {img1: `${commicsFirstFour}`, img2: `${commicsSecondFour}`,img3: `${commicsThirdFour}`,title: 'BattleVerse Chronicles: Season I, Issue 4', id: '/4', text1: 'The path has been chosen. Consequences are unpredictable. New issue of “Battleverse: Chronicles” is out!'},
+        {imgs: [`${commicsFirstFour}`,`${commicsSecondFour}`,`${commicsThirdFour}`],title: 'BattleVerse Chronicles: Season I, Issue 4', id: '/4', text1: 'The path has been chosen. Consequences are unpredictable. New issue of “Battleverse: Chronicles” is out!'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Season I, Issue 5', id: '/5', text1: 'Adventures of Captain’s Beck crew continues! New issue of “Battleverse: Chronicles” is out!'},
+        {imgs: [`${commicsFirstFive}`, `${commicsSecondFive}`,`${commicsThirdFive}`],title: 'BattleVerse Chronicles: Season I, Issue 5', id: '/5', text1: 'Adventures of Captain’s Beck crew continues! New issue of “Battleverse: Chronicles” is out!'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Season I, Issue 6', id: '/6', text1: 'A hard situation for Grook and Fives! Will they escape from the evil bots? You will find all the answers in the new issues of “Battleverse: Chronicles”!'},
+        {imgs: [`${commicsFirstSix}`,`${commicsSecondSix}`, `${commicsThirdSix}`] ,title: 'BattleVerse Chronicles: Season I, Issue 6', id: '/6', text1: 'A hard situation for Grook and Fives! Will they escape from the evil bots? You will find all the answers in the new issues of “Battleverse: Chronicles”!'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Season I, Issue 7', id: '/7', text1: 'Things are getting worse. Quazar Fire crew trying to escape, but evil Bots won’t leave them so easy…'},
+        {imgs: [`${commicsFirstSeven}`, `${commicsSecondSeven}`, `${commicsThirdSeven}`],title: 'BattleVerse Chronicles: Season I, Issue 7', id: '/7', text1: 'Things are getting worse. Quazar Fire crew trying to escape, but evil Bots won’t leave them so easy…'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Season I, Issue 8', id: '/8', text1: 'Reveal some moments from the past of Captain Beck in the brand-new episode!'},
+        {imgs: [`${commicsFirstEight}`, `${commicsSecondEight}`,`${commicsThirdEight}`] ,title: 'BattleVerse Chronicles: Season I, Issue 8', id: '/8', text1: 'Reveal some moments from the past of Captain Beck in the brand-new episode!'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Season I, Issue 9', id: '/9', text1: 'A new issue of the Battleverse: Chronicles is on board! We need your help! Make a hard decision and choose the destiny of Fives!'},
+        {imgs: [`${commicsFirstNine}`,`${commicsSecondNine}`,`${commicsThirdNine}`],title: 'BattleVerse Chronicles: Season I, Issue 9', id: '/9', text1: 'A new issue of the Battleverse: Chronicles is on board! We need your help! Make a hard decision and choose the destiny of Fives!'},
 
-        {img1: `${commicsFirstFive}`, img2: `${commicsSecondFive}`,img3: `${commicsThirdFive}`,title: 'BattleVerse Chronicles: Special Issue #1 ', id: '/10', text1: 'Adventures of Captain’s Beck crew continues! New issue of “Battleverse: Chronicles” is out!'},
+        {imgs: [ `${commicsFirstTen}`,`${commicsSecondTen}`],title: 'BattleVerse Chronicles: Special Issue #1 ', id: '/10', text1: 'Adventures of Captain’s Beck crew continues! New issue of “Battleverse: Chronicles” is out!'},
        
     ]
-    console.log(location.pathname)
+    // console.log(location.pathname === `/1`)
     return(
         <>
         <div>
                 {posts.map( post => {
                     return(
                         post.id === location.pathname ? 
-                        <section className="comics-posts">
-                           <div className='comics-posts_main'>
+                        <section key={post.id} className="comics-posts">
+                           <div className='comics-posts_main comics-padding'>
                             <h1 className='comics-posts_title'>{post.title}</h1>
                                 <p>{post.text1}</p>
                                 <p>{post.text2}</p>
                                 <p>{post.text3}</p>
                                 <div>
-                                    <img src={post.img1} alt="#" />
-                                    <img src={post.img2} alt="#" />
-                                    <img src={post.img3} alt="#" />
+                                    {post.imgs.map((img, index) => {
+                                        return(
+                                        <div key={index}>
+                                            <img src={img} alt="" />
+                                        </div>
+                                        )
+                                    })}
                                 </div>
                            </div>
+                           <nav className='comics-padding '>
+                            <Link to={location.pathname === `/1` ? `${location.pathname}` : `/${location.pathname.replace('/', '') - 1}`} style={ location.pathname === `/1` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} }>
+                            
+                            <ArrowLeft  style={ location.pathname === `/1` ?{fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' src={ArrowLeft} alt="#" />
+                            </Link>
+                            <Link to={location.pathname === `/10` ? `${location.pathname}` : `/${parseInt(location.pathname.replace('/', '')) + 1}`} style={ location.pathname === `/10` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} } >
+
+                                <ArrowLeft style={ location.pathname === `/10` ?{transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+
+                            </Link>
+                           </nav>
                         </section>
                     :
                     null

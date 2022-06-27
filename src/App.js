@@ -16,12 +16,12 @@ function App() {
     <div className="App">
         <Routes>
           <Route path="/" element={ <Main />} >
-            <Route  path='/' element={<Seasons />} />
+            <Route path='/' element={<Seasons />} />
             <Route index path='/' element={<Comics />} />
-            <Route path='/*' element={<ComingSoon />} />
+            <Route path='*' element={<ComingSoon />} />
             <Route path=':id' element={<ComicsPosts />} />
             <Route path='/Roadmap' element={<Roadmap />} />
-          </Route>
+          </Route>  
         </Routes>
     </div>
   );

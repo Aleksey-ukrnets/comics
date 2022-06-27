@@ -63,8 +63,9 @@ export default function Header() {
           <div className='barCenter'>
             {anchors.map((item, index) => (
               <Link  
-                key={item.link + 1} to={item.link} onClick={() => {
-                  setTimeout(() => {document.getElementById(item.link).scrollIntoView()}, 200)}}
+                key={item.link + 1} to={item.link} 
+                // onClick={() => {
+                //   setTimeout(() => {document.getElementById(item.link).scrollIntoView()}, 200)}}
                   onMouseUp={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}
                   onMouseDown={e => {e.target.style.fontSize = '13.76px'; e.target.style.paddingInline = '5.2px'; e.target.style.filter = 'brightness(55%)'}}
                   onMouseLeave={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}>{item.title}</Link>
