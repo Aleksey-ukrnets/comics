@@ -90,7 +90,7 @@ export default function ComicsPosts() {
                                 <div>
                                     {post.imgs.map((img, index) => {
                                         return(
-                                        <div key={index}>
+                                        <div key={index} className='comics-posts-img'>
                                             <img src={img} alt="" />
                                         </div>
                                         )

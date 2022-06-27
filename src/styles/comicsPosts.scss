@@ -17,6 +17,11 @@
         width: 100vw;
         
     }
+    &-img {
+        & img:first-child {
+            margin: 15px 0 0 0;
+        }
+    }
     &_title {
         font-size: 32px;
         line-height: 40px;
@@ -54,6 +59,7 @@
     width: 40px;
     height: 40px;
 }
+
 // .comics-svg * {
 //     color: tomato;
 //     fill: tomato;
