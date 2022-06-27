@@ -11,9 +11,9 @@ export default function Seasons () {
             
             <section className="seasons">
                 <nav className="seasons-nav">
-                    <NavLink className="seasons-link" to={'/'}>Season 1</NavLink>
-                    <NavLink onClick={isDefault} className="seasons-link" to={'/season2'}>Season 2</NavLink>
-                    <NavLink onClick={isDefault} className="seasons-link" to={'/season3'}>Season 3</NavLink>
+                    <NavLink className="seasons-link" to={'/comics'}>Season 1</NavLink>
+                    <NavLink onClick={isDefault} className="seasons-link" to={'/comics2'}>Season 2</NavLink>
+                    <NavLink onClick={isDefault} className="seasons-link" to={'/comics3'}>Season 3</NavLink>
                 </nav>
             </section>
             

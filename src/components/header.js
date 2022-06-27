@@ -11,7 +11,7 @@ export default function Header() {
   let [openMenu, setOpenMenu] = useState(false)
   
   const anchors = [
-    {title: 'Roadmap', link: 'Roadmap'}, 
+    {title: 'Roadmap', link: 'https://battleverse.io/'}, 
     {title: 'Team', link: 'Team'}, 
     {title: 'Tokenomics', link: 'Tokenomics'}
   ]
@@ -57,18 +57,18 @@ export default function Header() {
       </div>
       <div className='topBarContainer'>
         <div className='topBar'>
-          <Link to='/' className='logo'>
+          <Link to='/comics' className='logo'>
             <img src={Logo} alt="logo" />
           </Link>
           <div className='barCenter'>
             {anchors.map((item, index) => (
-              <Link  
-                key={item.link + 1} to={item.link} 
+              <a  
+                key={item.link + 1} href={item.link} target='_blank'
                 // onClick={() => {
                 //   setTimeout(() => {document.getElementById(item.link).scrollIntoView()}, 200)}}
                   onMouseUp={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}
                   onMouseDown={e => {e.target.style.fontSize = '13.76px'; e.target.style.paddingInline = '5.2px'; e.target.style.filter = 'brightness(55%)'}}
-                  onMouseLeave={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}>{item.title}</Link>
+                  onMouseLeave={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}>{item.title}</a>
             ))}
           </div>
           <div className='additionalMenu'>
