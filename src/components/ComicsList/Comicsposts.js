@@ -47,11 +47,17 @@ import { Link } from 'react-router-dom'
 
 
 import '../../styles/comicsPosts.scss'
+import { useRef, useEffect } from 'react'
 
 export default function ComicsPosts() {
    const location = useLocation()
-  
-
+    // const topLocation = useRef(null)
+    // useEffect(() => {
+    //     console.log(1)
+    //     if(location.pathname !== location.pathname) {
+    //         window.scrollTo(0,0)
+    //     }
+    // })
     const posts = [
         {imgs: [ `${commicsFirst}`, `${commicsSecond}`, `${commicsThird}`],title: 'BattleVerse Chronicles: Season I, Issue 1', id: '/1', text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
 
@@ -81,7 +87,7 @@ export default function ComicsPosts() {
                 {posts.map( post => {
                     return(
                         post.id === location.pathname ? 
-                        <section key={post.id} className="comics-posts">
+                        <section  key={post.id} className="comics-posts">
                            <div className='comics-posts_main comics-padding'>
                             <h1 className='comics-posts_title'>{post.title}</h1>
                                 <p>{post.text1}</p>
@@ -91,7 +97,7 @@ export default function ComicsPosts() {
                                     {post.imgs.map((img, index) => {
                                         return(
                                         <div key={index} className='comics-posts-img'>
-                                            <img src={img} alt="" />
+                                            <img src={img} alt="#" />
                                         </div>
                                         )
                                     })}
@@ -100,11 +106,11 @@ export default function ComicsPosts() {
                            <nav className='comics-padding '>
                             <Link to={location.pathname === `/1` ? `${location.pathname}` : `/${location.pathname.replace('/', '') - 1}`} style={ location.pathname === `/1` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} }>
                             
-                            <ArrowLeft  style={ location.pathname === `/1` ?{fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' src={ArrowLeft} alt="#" />
+                            <ArrowLeft onClick={() => setTimeout(() => {window.scrollTo(10,0)}, 200)}  style={ location.pathname === `/1` ?{fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' src={ArrowLeft} alt="#" />
                             </Link>
                             <Link to={location.pathname === `/10` ? `${location.pathname}` : `/${parseInt(location.pathname.replace('/', '')) + 1}`} style={ location.pathname === `/10` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} } >
 
-                                <ArrowLeft style={ location.pathname === `/10` ?{transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+                                <ArrowLeft onClick={() => setTimeout(() => {window.scrollTo(10,0)}, 200)} style={ location.pathname === `/10` ?{transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
 
                             </Link>
                            </nav>
