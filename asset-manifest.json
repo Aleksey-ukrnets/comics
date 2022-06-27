@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/comics/static/css/main.2d77213d.css",
-    "main.js": "/comics/static/js/main.72fde37b.js",
-    "static/js/787.28cb0dcd.chunk.js": "/comics/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/comics/static/css/main.7f9dd114.css",
+    "main.js": "/comics/static/js/main.7791333c.js",
     "static/media/comics10.1.jpeg": "/comics/static/media/comics10.1.e84d9f872dbad80272cf.jpeg",
     "static/media/comics6.3.jpeg": "/comics/static/media/comics6.3.ef233190f7d88712bf2e.jpeg",
     "static/media/comics10.2.jpeg": "/comics/static/media/comics10.2.a6494ec696d9a1fd09e3.jpeg",
@@ -39,14 +38,15 @@
     "index.html": "/comics/index.html",
     "static/media/telegram.svg": "/comics/static/media/telegram.1f0e3a6204b3a39d938aabb7650eba54.svg",
     "static/media/medium.svg": "/comics/static/media/medium.617e3f98cb3f16f58849e9fc0d225cd7.svg",
+    "static/media/arrowLeft.svg": "/comics/static/media/arrowLeft.423745991f2546f2d605cc7fa3ce163f.svg",
+    "static/media/arrowRight.svg": "/comics/static/media/arrowRight.db98598de77d0bdb538a6444941960e6.svg",
     "static/media/youtube.svg": "/comics/static/media/youtube.b62db9bd04d819e8768cbf44ddaff8ef.svg",
     "static/media/in.svg": "/comics/static/media/in.53e8f4d06adc5aea062697d087b4cdee.svg",
-    "main.2d77213d.css.map": "/comics/static/css/main.2d77213d.css.map",
-    "main.72fde37b.js.map": "/comics/static/js/main.72fde37b.js.map",
-    "787.28cb0dcd.chunk.js.map": "/comics/static/js/787.28cb0dcd.chunk.js.map"
+    "main.7f9dd114.css.map": "/comics/static/css/main.7f9dd114.css.map",
+    "main.7791333c.js.map": "/comics/static/js/main.7791333c.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d77213d.css",
-    "static/js/main.72fde37b.js"
+    "static/css/main.7f9dd114.css",
+    "static/js/main.7791333c.js"
   ]
 }
