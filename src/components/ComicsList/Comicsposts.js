@@ -51,13 +51,12 @@ import { useRef, useEffect } from 'react'
 
 export default function ComicsPosts() {
    const location = useLocation()
-    // const topLocation = useRef(null)
-    // useEffect(() => {
-    //     console.log(1)
-    //     if(location.pathname !== location.pathname) {
-    //         window.scrollTo(0,0)
-    //     }
-    // })
+    const topLocation = useRef(null)
+    useEffect(() => {
+        if(true) {
+            window.scrollTo(0,0)
+        }
+    })
     const posts = [
         {imgs: [ `${commicsFirst}`, `${commicsSecond}`, `${commicsThird}`],title: 'BattleVerse Chronicles: Season I, Issue 1', id: '/1', text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
 
@@ -106,11 +105,11 @@ export default function ComicsPosts() {
                            <nav className='comics-padding '>
                             <Link to={location.pathname === `/1` ? `${location.pathname}` : `/${location.pathname.replace('/', '') - 1}`} style={ location.pathname === `/1` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} }>
                             
-                            <ArrowLeft onClick={() => setTimeout(() => {window.scrollTo(10,0)}, 200)}  style={ location.pathname === `/1` ?{fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' src={ArrowLeft} alt="#" />
+                            <ArrowLeft  style={ location.pathname === `/1` ?{fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' src={ArrowLeft} alt="#" />
                             </Link>
                             <Link to={location.pathname === `/10` ? `${location.pathname}` : `/${parseInt(location.pathname.replace('/', '')) + 1}`} style={ location.pathname === `/10` ? {color: 'gray', cursor: 'default'} : {color: 'white',cursor: 'pointer'} } >
 
-                                <ArrowLeft onClick={() => setTimeout(() => {window.scrollTo(10,0)}, 200)} style={ location.pathname === `/10` ?{transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+                                <ArrowLeft  style={ location.pathname === `/10` ?{transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
 
                             </Link>
                            </nav>

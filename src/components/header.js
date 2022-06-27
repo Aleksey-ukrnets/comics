@@ -63,7 +63,7 @@ export default function Header() {
           <div className='barCenter'>
             {anchors.map((item, index) => (
               <a  
-                key={item.link + 1} href={item.link} target='_blank'
+                key={item.link + 1} href='https://battleverse.io/' target='_blank'
                 // onClick={() => {
                 //   setTimeout(() => {document.getElementById(item.link).scrollIntoView()}, 200)}}
                   onMouseUp={e => {e.target.style.fontSize = '16px'; e.target.style.paddingInline = '0px'; e.target.style.filter = 'brightness(100%)'}}
@@ -89,7 +89,7 @@ export default function Header() {
       {width<1024 && <div className='adaptiveMenu' style={{ top: openMenu ? '128px' : '-20em'}}>
         {anchors.map((item, index) => (
           <div key={index}>
-            <Link to='/' onClick={() => {setTimeout(() => {document.getElementById(item.link).scrollIntoView()}, 200); setOpenMenu(!openMenu)}}>{item.title}</Link>
+            <a href='https://battleverse.io/' target='_blank' onClick={() => {setOpenMenu(!openMenu)}}>{item.title}</a>
           </div>
         ))}
       </div>}
