@@ -1,0 +1,36 @@
+.roadmap {
+    margin-top: 20px;
+    @media (max-width: 980px) {
+        margin-top: 40px;
+    }
+    &-link {
+        text-decoration: none;
+        color: white;
+        transition: all 0.1s;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        margin-left: 40px;
+        &:nth-child(1) {
+            margin: 0;
+        }
+        &:nth-child(2), &:nth-child(3) {
+            margin-left: 40px
+        }
+        &.active {
+            color: aqua;
+            border-bottom: 2px solid aqua ;
+            padding: 0 0 2px 0;
+        }
+    }
+    &-nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 25px;
+        
+    }
+    
+}
