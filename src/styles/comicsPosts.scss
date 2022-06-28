@@ -11,9 +11,12 @@
     }
 }
 .comics-posts {
-    width: 60vw;
+    width: 65vw;
     margin: 0 auto;
     @media (max-width: 768px){
+        width: 80vw;  
+    }
+    @media (max-width: 500px){
         width: 100vw;  
     }
     
