@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
 }
 .comics-padding {
@@ -15,9 +14,9 @@
     width: 60vw;
     margin: 0 auto;
     @media (max-width: 768px){
-        width: 80vw;
-        
+        width: 100vw;  
     }
+    
     &-img {
         & img:first-child {
             margin: 15px 0 0 0;

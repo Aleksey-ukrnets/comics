@@ -51,11 +51,13 @@ import { useRef, useEffect } from 'react'
 
 export default function ComicsPosts() {
    const location = useLocation()
+
     const topLocation = useRef(null)
+
     useEffect(() => {
-        if(true) {
-            window.scrollTo(0,0)
-        }
+      return location.pathname === `/10` || location.pathname === `/1` ? undefined :  window.scrollTo(0,0)
+
+       
     })
     const posts = [
         {imgs: [ `${commicsFirst}`, `${commicsSecond}`, `${commicsThird}`],title: 'BattleVerse Chronicles: Season I, Issue 1', id: '/1', text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
