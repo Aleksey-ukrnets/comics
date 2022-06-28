@@ -43,7 +43,7 @@ export default function Comics() {
                 <div className='card-list'>
                     {collection.reverse().map((value, index) => {
                         return(
-                                <NavLink  key={value.value} to={`/${value.to}`} className='card'>
+                                <NavLink  key={value.value} to={`/comics/${value.to}`} className='card'>
                                     <div className="card-main">
                                         <div className='card-right'>
                                             <img src={value.img} alt="#" />
