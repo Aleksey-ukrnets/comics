@@ -130,16 +130,22 @@ export default function ComicsPosts() {
                                 : 
                                 <ArrowLeft onClick={IsDecrement}  style={ count === 0 ? {fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 } */}
-
+                                {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ПРАВОЙ) В /10 КОМИКСЕ */}
+                                {parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) === 1  && count === 0 &&
+                                <div>
+                                    <ArrowLeft  style={ count === 0 ? {fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+                                </div>   
+                                }
                                  {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ЛЕВОЙ) ВО ВСЕХ ОСТАЛЬНЫХ ЭЛЕМЕНТАХ /1-/9 */}
-                                 {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count === 0 &&
+                                 {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count === 0 &&  parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 1 
+                                 &&
                                 <Link onClick={() => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`}>
-                                    <ArrowLeft   style={ count === 0 ? {fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+                                    <ArrowLeft   style={ count === 0 ? {fill: 'white', stroke: 'white',cursor: 'pointer'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 </Link>   
                                 }
                                 {/* ОТРИСОВКА БЕЛОЙ СТРЕЛКИ В 1-9 */}
                                 {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count !== 0 &&
-                                 <ArrowLeft onClick={IsDecrement}  style={ count !== 0 ? {fill: 'white', stroke: 'white',cursor: 'pointer'} :{fill: 'gray', stroke: 'gray',cursor: 'default'} } className='comics-svg' />
+                                 <ArrowLeft onClick={IsDecrement}  style={ count !== 0 ? {fill: 'white', stroke: 'white',cursor: 'pointer'} :{fill: 'white', stroke: 'white',cursor: 'pointer'} } className='comics-svg' />
                                 }
                                 {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ЛЕВОЙ) В /10 КОМИКСЕ */}
                                 {parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) === 10  && count === 0 &&
@@ -155,7 +161,7 @@ export default function ComicsPosts() {
                                 }
                             </div>
                             <div style={{fontSize: '20px',display: 'flex', alignItems: 'center'}}>
-                                {`Page ${count + 1}`}
+                                {`Comics ${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`))}, Page ${count + 1}`}
                                 
                             </div>
                             <div>
@@ -163,7 +169,7 @@ export default function ComicsPosts() {
                                 {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ПРАВОЙ) ВО ВСЕХ ОСТАЛЬНЫХ ЭЛЕМЕНТАХ /1-/9 */}
                                 {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count === 2 &&
                                 <Link onClick={() => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) + 1}`}>
-                                    <ArrowLeft   style={ count === 2 ? {transform: 'rotate(180deg)',fill: 'gray', stroke: 'gray',cursor: 'default'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
+                                    <ArrowLeft   style={ count === 2 ? {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'} : {transform: 'rotate(180deg)',fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 </Link>   
                                 }
                                 {/* ОТРИСОВКА БЕЛОЙ СТРЕЛКИ В 1-9 */}

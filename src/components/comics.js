@@ -41,7 +41,7 @@ export default function Comics() {
         <Seasons />
             <section className='seasons-card'>
                 <div className='card-list'>
-                    {collection.reverse().map((value, index) => {
+                    {collection.map((value, index) => {
                         return(
                                 <NavLink  key={value.value} to={`/comics/${value.to}`} className='card'>
                                     <div className="card-main">
