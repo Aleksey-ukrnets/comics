@@ -138,7 +138,7 @@ export default function ComicsPosts() {
 
                                      {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
                                     count === 0 && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) > 1 &&
-                                     <Link onClick={(e) => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`} className='toLeft'></Link>
+                                     <Link onClick={(e) => setCount(posts[Number(location.pathname.replace('/comics/', ''))-1].imgs.length - 1)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`} className='toLeft'></Link>
                                     }
                                     {/* Заглушка в 10 комиксе по клику на правую часть*/}
                                    {
@@ -185,7 +185,7 @@ export default function ComicsPosts() {
                                  {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ЛЕВОЙ) ВО ВСЕХ ОСТАЛЬНЫХ ЭЛЕМЕНТАХ /1-/9 */}
                                  {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count === 0 &&  parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 1 
                                  &&
-                                <Link onClick={(e) => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`}>
+                                <Link onClick={(e) => setCount(posts[Number(location.pathname.replace('/comics/', ''))-1].imgs.length - 1)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`}>
                                     <ArrowLeft   style={ count === 0 ? {fill: 'white', stroke: 'white',cursor: 'pointer'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 </Link>   
                                 }
