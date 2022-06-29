@@ -8,7 +8,7 @@ import ComingSoon from './components/comingsoon';
 import Comics from './components/comics';
 import ComicsPosts from './components/ComicsList/Comicsposts';
 import Roadmap from './components/Roadmap';
-import ComicsPage from './components/ComicsList/ComicsPage';
+
 
 
 function App() {
@@ -21,7 +21,6 @@ function App() {
             <Route index path='/comics' element={<Comics />} />
             <Route path='*' element={<ComingSoon />} />
             <Route path='/comics/:id/' element={<ComicsPosts />} />
-            <Route path='/comics/:id/:id' element={<ComicsPage />} />
             {/* <Route path='/Roadmap' element={<Roadmap />} /> */}
           </Route>  
         </Routes>

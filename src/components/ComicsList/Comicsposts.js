@@ -56,9 +56,12 @@ export default function ComicsPosts() {
 
     const [count, setCount] = useState(0)
 
+    const isDefault = (event) => event.preventDefault();
+
     const IsDecrement = () => {
         count <= 0 ? setCount(0) : setCount(count - 1)  
     }
+
     const IsIncrement = () => {
         for(let i = 0; posts.length > i; i++){
             if(parseInt(location.pathname.replace('/comics/10', `${10}`)) === 10) {
@@ -70,9 +73,18 @@ export default function ComicsPosts() {
     }
  
 
-    useEffect(() => {
-      return location.pathname === `/10` || location.pathname === `/1` ? undefined :  window.scrollTo(0,0)
+    useEffect((e) => {
+      if(location.pathname === `/10` || location.pathname === `/1`) {
+        return isDefault();
+      } else if(window.innerWidth > 1024) {
+       return  window.scrollTo({top: 30,
+        behavior: "smooth"})
+      }
+      else {
+
+      }
     })
+    console.log(location.pathname === `/10` || location.pathname === `/1`)
     const posts = [
         {imgs: [ `${commicsFirst}`, `${commicsSecond}`, `${commicsThird}`],title: 'BattleVerse Chronicles: Season I, Issue 1', id: 1, text1: 'Meet the first issue of the BattleVerse Chronicles comic. Have fun reading!'},
 
@@ -108,16 +120,49 @@ export default function ComicsPosts() {
                                 <p>{post.text1}</p>
                                 <p>{post.text2}</p>
                                 <p>{post.text3}</p>
-                                <div>
+                                <div style={{position: 'relative'}}>
                                     {post.imgs.map((img, index) => {
                                         return(
-                                            <div key={img}>
+                                            <div key={img} >
                                                {index  === count && <img src={img} />}   
                                                
                                             </div>
+                                        
                                         )
                                     })}
-                                  
+                                    {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
+                                    count !== 0 &&
+                                        <div onClick={IsDecrement} className='toLeft'></div>
+                                       
+                                    }
+
+                                     {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
+                                    count === 0 && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) > 1 &&
+                                     <Link onClick={(e) => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`} className='toLeft'></Link>
+                                    }
+                                    {/* Заглушка в 10 комиксе по клику на правую часть*/}
+                                   {
+                                    parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) === 10 && count === 1 &&
+                                    <div className='toRight'></div>
+                                   }
+                                   {/* Переключение по нажатию на комикс(правая часть) во всех комиксах кроме 10 */}
+                                    {
+                                   post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
+                                   count !== 2 && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10 &&
+                                    <div onClick={IsIncrement} className='toRight'></div>
+                                   }
+                                   {/* Переключение по нажатию на комикс(правая часть) LINk */}
+                                   {
+                                   post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
+                                   count == 2 && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10 &&
+                                    <Link  onClick={() => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) + 1}`}  className='toRight'></Link>
+                                   }
+                                   {/* переключение в 10 части */}
+                                    {
+                                   post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && 
+                                   count !== 1 && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) === 10 &&
+                                    <div onClick={IsIncrement} className='toRight'></div>
+                                   }
                                 </div>
                            </div>
                            <nav className='comics-padding '>
@@ -130,7 +175,8 @@ export default function ComicsPosts() {
                                 : 
                                 <ArrowLeft onClick={IsDecrement}  style={ count === 0 ? {fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 } */}
-                                {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ПРАВОЙ) В /10 КОМИКСЕ */}
+
+                                {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ЛЕВАЯ) В /10 КОМИКСЕ */}
                                 {parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) === 1  && count === 0 &&
                                 <div>
                                     <ArrowLeft  style={ count === 0 ? {fill: 'gray', stroke: 'gray',cursor: 'default'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
@@ -139,7 +185,7 @@ export default function ComicsPosts() {
                                  {/* ОТРИСОВКА СЕРОЙ СТРЕЛКИ(ЛЕВОЙ) ВО ВСЕХ ОСТАЛЬНЫХ ЭЛЕМЕНТАХ /1-/9 */}
                                  {post.id == parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) && parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 10  && count === 0 &&  parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) !== 1 
                                  &&
-                                <Link onClick={() => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`}>
+                                <Link onClick={(e) => setCount(0)} to={`/comics/${parseInt(location.pathname.replace(`/comics/${post.id}`, `${post.id}`)) - 1}`}>
                                     <ArrowLeft   style={ count === 0 ? {fill: 'white', stroke: 'white',cursor: 'pointer'} : {fill: 'white', stroke: 'white',cursor: 'pointer'}} className='comics-svg' />
                                 </Link>   
                                 }
